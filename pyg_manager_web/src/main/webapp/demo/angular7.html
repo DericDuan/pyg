@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="ch-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>事件命令</title>
+    <script src="../plugins/angularjs/angular.min.js"></script>
+    <script>
+        //定义一个模块的语法
+        var app=angular.module("pinyougou",[]);
+        //一个模块下可以有多个控制器
+        app.controller("myController",function ($scope) {
+            $scope.add=function () {
+                $scope.c=parseInt($scope.a)+parseInt($scope.b);
+            }
+        })
+    </script>
+</head>
+<body ng-app="pinyougou" ng-controller="myController">
+<input ng-model="a">+<input ng-model="b"><button ng-click="add()">等于</button><input ng-model="c">
+</body>
+</html>

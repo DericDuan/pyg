@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="ch-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>MVC</title>
+    <script src="../plugins/angularjs/angular.min.js"></script>
+    <script>
+        <!--$scope用于html和js数据交互的入口-->
+        function myController($scope) { //C  controller
+            $scope.username="小明";  //M  model
+        }
+    </script>
+</head>
+<body ng-app ng-controller="myController">
+{{username}}  //V  view
+
+</body>
+</html>

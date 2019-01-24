@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="ch-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>双向绑定</title>
+    <script src="../plugins/angularjs/angular.min.js"></script>
+    <script>
+        function show() {
+            var v = document.getElementById("myInput").value;
+            document.getElementById("mySpan").innerHTML=v;
+        }
+    </script>
+</head>
+<body ng-app>
+<input id="myInput" onkeyup="show()"> <br/>
+输入的内容是:<span id="mySpan"></span> <br/>
+
+<input ng-model="context"> <br/>
+输入的内容是:{{context}}
+</body>
+</html>
