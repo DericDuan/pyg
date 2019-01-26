@@ -21,6 +21,7 @@
 
     <script type="text/javascript" src="../js/service/itemCatService.js"></script>
     <script type="text/javascript" src="../js/service/typeTemplateService.js"></script>
+	<script type="text/javascript" src="../js/controller/baseController.js"></script>
     <script type="text/javascript" src="../js/controller/itemCatController.js"></script>
     
 
@@ -85,10 +86,10 @@
 									      <td>{{pojo.name}}</td>									    
 									      <td>{{pojo.typeId}}</td>									      
 		                                  <td class="text-center">		
-	                                          <span ng-if="grade!=3">                            
+	                                          <span ng-if="grade!=3">
 	                                     		 <button type="button" ng-click="setGrade(grade+1,pojo);findByParentId(pojo.id)" class="btn bg-olive btn-xs" >查询下级</button> 	
 	                                      	  </span>                                      
-		                                 	  <button type="button" class="btn bg-olive btn-xs" data-toggle="modal" data-target="#editModal" >修改</button>                                           
+		                                 	  <button type="button" ng-click="findOne(pojo)" class="btn bg-olive btn-xs" data-toggle="modal" data-target="#editModal" >修改</button>
 		                                  </td>
 			                          </tr>
 									  

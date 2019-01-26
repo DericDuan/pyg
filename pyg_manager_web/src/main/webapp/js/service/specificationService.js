@@ -5,6 +5,11 @@ app.service("specificationService", function ($http) {
         return $http.get("../specification/findPage?pageNo=" + pageNo + "&pageSize=" + pageSize);
     };
 
+    //关联规格使用
+    this.findSpecList = function () {
+        return $http.get("../specification/findSpecList");
+    };
+
     //查询所有
     this.findAll = function () {
         return $http.get("../specification/findAll");

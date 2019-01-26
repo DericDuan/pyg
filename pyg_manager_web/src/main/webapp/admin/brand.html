@@ -68,7 +68,7 @@
             <thead>
             <tr>
                 <th class="" style="padding-right:0px">
-                    <input id="selall" type="checkbox" class="icheckbox_square-blue">
+                    <input id="selall" type="checkbox" ng-click="checkedAll($event)" ng-checked="isCheckedAll()" class="icheckbox_square-blue">
                 </th>
                 <th class="sorting_asc">品牌ID</th>
                 <th class="sorting">品牌名称</th>
@@ -78,7 +78,7 @@
             </thead>
             <tbody>
             <tr ng-repeat="pojo in list">
-                <td><input type="checkbox" ng-click="updateSelections($event,pojo.id)"></td>
+                <td><input type="checkbox" ng-checked="isChecked(pojo.id)" ng-click="updateSelections($event,pojo.id)"></td>
                 <td>{{pojo.id}}</td>
                 <td>{{pojo.name}}</td>
                 <td>{{pojo.firstChar}}</td>

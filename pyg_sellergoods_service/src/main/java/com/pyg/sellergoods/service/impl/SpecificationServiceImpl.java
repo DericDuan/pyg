@@ -17,6 +17,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
+import java.util.Map;
 
 /**
  * @ClassName SpecificationServiceImpl
@@ -131,5 +132,10 @@ public class SpecificationServiceImpl implements SpecificationService {
 //        返回一个page对象
         Page<TbSpecification> page = (Page<TbSpecification>) specificationMapper.selectByExample(example);
         return new PageResult(page.getTotal(), page.getResult());
+    }
+
+    @Override
+    public List<Map> findSpecList() {
+        return specificationMapper.findSpecList();
     }
 }

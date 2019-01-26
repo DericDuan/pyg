@@ -30,4 +30,43 @@ app.controller("baseController",function ($scope) {
             $scope.selectedIds.splice(index, 1);//splice:移除数组中元素
         }
     };
+    //全选
+    $scope.checkedAll=function (event) {
+        if (event.target.checked) {
+            // 把当前页的id都放到数组中
+            for (var i=0;i<$scope.list.length;i++) {
+                //判断id是否在数组中,如果不在,才向数组中添加
+                if (!$scope.isChecked($scope.list[i].id)) {
+                    $scope.selectedIds.push($scope.list[i].id);
+                }
+            }
+        }else {
+            //从数组中删除当前页id
+            for (var i=0;i<$scope.list.length;i++) {
+                var index=$scope.selectedIds.indexOf($scope.list[i].id);
+                $scope.selectedIds.splice(index,1);
+            }
+        }
+
+    }
+//    判断id是否在数组中
+    $scope.isChecked=function (id) {
+        if($scope.selectedIds.indexOf(id)!=-1){
+            return true;
+        }else {
+            return false;
+        }
+    }
+//    判断是否全选
+    $scope.isCheckedAll=function () {
+        //判断当前页数据的id是否都在数组中,只要有一个不在数组中,就是非全选
+        for (var i=0;i<$scope.list.length;i++) {
+            var id = $scope.list[i].id;
+            if (!$scope.isChecked(id)) {
+                return false;
+            }
+        }
+        return true;
+
+    }
 });

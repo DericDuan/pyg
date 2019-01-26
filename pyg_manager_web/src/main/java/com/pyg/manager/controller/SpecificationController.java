@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
+import java.util.Map;
 
 /**
  * @ClassName SpecificationController
@@ -34,6 +35,11 @@ public class SpecificationController {
     @RequestMapping("/findAll")
     public List<TbSpecification> findAll() {
         return specificationService.findAll();
+    }
+
+    @RequestMapping("/findSpecList")
+    public List<Map> findSpecList() {
+        return specificationService.findSpecList();
     }
 
 

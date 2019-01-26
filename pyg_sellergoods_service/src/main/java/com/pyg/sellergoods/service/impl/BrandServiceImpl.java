@@ -13,6 +13,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
+import java.util.Map;
 
 /**
  * @ClassName BrandServiceImpl
@@ -88,5 +89,10 @@ public class BrandServiceImpl implements BrandService {
 //        返回一个page对象
         Page<TbBrand> page = (Page<TbBrand>) brandMapper.selectByExample(example);
         return new PageResult(page.getTotal(), page.getResult());
+    }
+
+    @Override
+    public List<Map> findBrandList() {
+       return brandMapper.findBrandList();
     }
 }

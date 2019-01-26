@@ -4,6 +4,7 @@ import com.pyg.pojo.TbBrand;
 import entity.PageResult;
 
 import java.util.List;
+import java.util.Map;
 
 /**
  * @ClassName BrandService
@@ -29,4 +30,6 @@ public interface BrandService {
 //    public List<TbBrand> search(TbBrand brand);
 
     public PageResult findPage(int pageNo, int pageSize, TbBrand brand);
+
+    List<Map> findBrandList();
 }

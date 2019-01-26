@@ -5,6 +5,7 @@ import entity.PageResult;
 import groupEntity.Specification;
 
 import java.util.List;
+import java.util.Map;
 
 /**
  * @ClassName SpecificationService
@@ -30,4 +31,7 @@ public interface SpecificationService {
 //    public List<TbSpecification> search(TbSpecification specification);
 
     public PageResult findPage(int pageNo, int pageSize, TbSpecification specification);
+
+    List<Map> findSpecList();
+
 }

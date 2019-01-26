@@ -9,6 +9,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.Map;
 
 /**
  * @ClassName BrandController
@@ -27,6 +28,12 @@ public class BrandController {
     public BrandController() {
         System.out.println("==========================");
     }
+
+    @RequestMapping("/findBrandList")
+    public List<Map> findBrandList() {
+        return brandService.findBrandList();
+    }
+
 
     @RequestMapping("/findAll")
     public List<TbBrand> findAll() {

@@ -5,6 +5,11 @@ app.service("brandService", function ($http) {
         return $http.get("../brand/findPage?pageNo=" + pageNo + "&pageSize=" + pageSize);
     };
 
+    //查询所有,此方法是在添加模板时使用的,要求查询的格式是:[{id:1,text:""},{},{}]
+    this.findBrandList=function(){
+        return $http.get('../brand/findBrandList');
+    }
+
     //查询所有
     this.findAll = function () {
         return $http.get("../brand/findAll");
